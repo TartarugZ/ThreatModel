@@ -6,7 +6,7 @@ from PyQt5 import QtWidgets
 from functions import functions, threat_model
 from view.admin_window import AdminWindow
 from functions import scenario_attack
-from PyQt5.QtGui import QPixmap
+from PyQt5.QtGui import QPixmap, QIcon
 
 
 class EngineerWindow(QtWidgets.QMainWindow, Ui_EngineerWindow):
@@ -14,6 +14,8 @@ class EngineerWindow(QtWidgets.QMainWindow, Ui_EngineerWindow):
         try:
             super().__init__()
             self.setupUi(self)
+            self.setWindowTitle('Инженер ИБ')
+            self.setWindowIcon(QIcon('files/open_lock.ico'))
             self.engine = engine
 
             self.devices_parsed = {}

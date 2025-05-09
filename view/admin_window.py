@@ -2,6 +2,8 @@ import os
 import sys
 import copy
 from PyQt5 import QtWidgets
+from PyQt5.QtGui import QIcon
+
 from data_base import db_model
 import math
 from data_base.db_controller import get_all_ubi, get_object_type_by_ubi_id, delete_threat_device_type, get_all_device_type, \
@@ -22,6 +24,8 @@ class AdminWindow(QtWidgets.QMainWindow, Ui_AdminWindow):
         try:
             super().__init__()
             self.setupUi(self)
+            self.setWindowTitle('Администратор ИБ')
+            self.setWindowIcon(QIcon('files/open_lock.ico'))
             self.engine = engine
             #  threat_page
             self.threat_btn.clicked.connect(self.threat_page_show)
@@ -1404,6 +1408,8 @@ class AdminWindow(QtWidgets.QMainWindow, Ui_AdminWindow):
             self.object_object_list_select_item = self.threat_get_all_object_type_parsed[
                 self.object_obj_list.selectedItems()[0].text()]
             self.object_delete_btn.setEnabled(True)
+            print(self.threat_get_all_object_type_parsed[
+                self.object_obj_list.selectedItems()[0].text()])
             self.object_description_te.setPlainText(self.object_object_list_select_item.description)
             self.object_get_obj_type_interfaces()
         except Exception as e:

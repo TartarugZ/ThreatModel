@@ -52,7 +52,7 @@ def test_fill(engine):
     test_filling.intruders(engine)
     test_filling.insider_criteria_fill(engine)
     test_filling.device_connection(engine)
-    # test_filling.device_vul(engine)
+    test_filling.device_vul(engine)
 
 
 def re_create():

@@ -1,3 +1,4 @@
+from PyQt5.QtGui import QIcon
 from py_ui.ui_AuthWindow import Ui_AuthWindow
 from view.admin_window import AdminWindow
 from view.engineer_window import EngineerWindow
@@ -11,6 +12,8 @@ class AuthWindow(QtWidgets.QMainWindow, Ui_AuthWindow):
         try:
             super().__init__()
             self.setupUi(self)
+            self.setWindowTitle('Подключение')
+            self.setWindowIcon(QIcon('files/lock.ico'))
             self.log_in_btn.pressed.connect(self.log_in)
         except Exception as e:
             print(e)
