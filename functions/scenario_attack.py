@@ -33,7 +33,7 @@ def find_all_paths(edges, start, end):
     return all_paths
 
 
-def save_paths_to_file(paths, start, end, filename="scenario_attack_output/paths.txt"):
+def save_paths_to_file(paths, start, end, filename="functions/scenario_attack_output/paths.txt"):
     with open(filename, 'w') as f:
         if not paths:
             f.write(f"No paths found from {start} to {end}.\n")
@@ -71,40 +71,35 @@ def visualize_graph(edges, start, end, output_file, highlight_path=None):
     # Подписи для начальной и конечной вершин
     nx.draw_networkx_nodes(G, pos, nodelist=[start, end], node_color=['green', 'orange'], node_size=500)
 
-    plt.title(f"Graph Visualization (Path from {start} to {end})")
+    plt.title(f"Отображение сценария (путь от устройства {start} до устройства {end})")
     plt.axis('off')
     plt.savefig(output_file, format='png', dpi=300, bbox_inches='tight')
     # plt.show()
 
-matplotlib.use('TkAgg')
-# Пример использования
-from sqlalchemy import create_engine
-SQLALCHEMY_DATABASE_URL = "postgresql://a:kali@192.168.226.152:5432/postgres"
-engine = create_engine(SQLALCHEMY_DATABASE_URL, echo=True)
-all_connections = get_all_some(engine, db_model.DeviceConnectionBase)
-con_array = []
-for i in all_connections:
-    con_array.append((i.first_device_id, i.second_device_id))
-print(con_array)
-edges = con_array
-start = 1
-end = 4
 
-# Находим все маршруты
-paths = find_all_paths(edges, start, end)
+def do_scenario(connected_devices, first, second):
+    matplotlib.use('Agg')
+    # Пример использования
 
-# Сохраняем маршруты в файл
-save_paths_to_file(paths, start, end)
+    edges = connected_devices
+    start = first
+    end = second
 
-# Выводим маршруты в консоль
-if paths:
-    print(f"All paths from {start} to {end}:")
-    for i, path in enumerate(paths, 1):
-        print(f"Path {i}: {path}")
-else:
-    print(f"No paths from {start} to {end}.")
+    # Находим все маршруты
+    paths = find_all_paths(edges, start, end)
 
-# Визуализируем граф (если он есть)
-if paths:
-    for i in paths:
-        visualize_graph(edges, start, end, highlight_path=i, output_file=f"scenario_attack_output/graph{i}.png")
+    # Сохраняем маршруты в файл
+    save_paths_to_file(paths, start, end)
+
+    # Выводим маршруты в консоль
+    if paths:
+        print(f"All paths from {start} to {end}:")
+        for i, path in enumerate(paths, 1):
+            print(f"Path {i}: {path}")
+    else:
+        print(f"No paths from {start} to {end}.")
+
+    # Визуализируем граф (если он есть)
+    if paths:
+        for i in paths:
+            visualize_graph(edges, start, end, highlight_path=i, output_file=f"functions/scenario_attack_output/graph{i}.png")

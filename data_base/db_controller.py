@@ -204,7 +204,7 @@ def get_impact_types_by_dev_id(engine, device_id):
             db_model.DeviceBase.id == device_id).join(db_model.DeviceImpactTypeBase,
                                                       db_model.DeviceImpactTypeBase.device_id == db_model.DeviceBase.id).join(
             db_model.ImpactTypeBase, db_model.DeviceImpactTypeBase.impact_type_id == db_model.ImpactTypeBase.id)
-        db_object = session.scalars(statement).all()
+        db_object = session.execute(statement)
         return db_object
 
 
@@ -217,7 +217,7 @@ def get_ubi_by_dev_id(engine, device_id):
             db_model.DeviceBase.id == device_id).join(db_model.DeviceThreatBase,
                                                       db_model.DeviceThreatBase.device_id == db_model.DeviceBase.id).join(
             db_model.ThreatBase, db_model.DeviceThreatBase.threat_id == db_model.ThreatBase.id)
-        db_object = session.scalars(statement).all()
+        db_object = session.execute(statement)
         return db_object
 
 
@@ -230,7 +230,7 @@ def get_negative_by_dev_id(engine, device_id):
                                                       db_model.DeviceNegativeResultBase.device_id == db_model.DeviceBase.id).join(
             db_model.NegativeResultBase,
             db_model.DeviceNegativeResultBase.negative_result_id == db_model.NegativeResultBase.id)
-        db_object = session.scalars(statement).all()
+        db_object = session.execute(statement)
         return db_object
 
 
@@ -243,7 +243,7 @@ def get_realization_by_dev_id(engine, device_id):
                                                       db_model.DeviceRealizationBase.device_id == db_model.DeviceBase.id).join(
             db_model.RealizationWayBase,
             db_model.DeviceRealizationBase.realization_way_id == db_model.RealizationWayBase.id)
-        db_object = session.scalars(statement).all()
+        db_object = session.execute(statement)
         return db_object
 
 
@@ -256,7 +256,7 @@ def get_vul_by_dev_id(engine, device_id):
                                                       db_model.DeviceVulnerabilityBase.device_id == db_model.DeviceBase.id).join(
             db_model.VulnerabilityBase,
             db_model.DeviceVulnerabilityBase.vulnerability_id == db_model.VulnerabilityBase.id)
-        db_object = session.scalars(statement).all()
+        db_object = session.execute(statement)
         return db_object
 
 
@@ -264,10 +264,10 @@ def get_scenario_by_dev_id_threat_id(engine, device_id, threat_id):
     with Session(engine) as session:
         statement = select(db_model.DeviceScenarioBase.id, db_model.DeviceScenarioBase.device_id,
                            db_model.DeviceScenarioBase.technique_id, db_model.DeviceScenarioBase.threat_id,
-                           db_model.DeviceScenarioBase.description).where(
+                           db_model.DeviceScenarioBase.description, db_model.TechniqueBase.name, db_model.TechniqueBase.tactic_id, db_model.TechniqueBase.technique_id).where(
             db_model.DeviceScenarioBase.device_id == device_id).where(
-            db_model.DeviceScenarioBase.threat_id == threat_id)
-        db_object = session.scalars(statement).all()
+            db_model.DeviceScenarioBase.threat_id == threat_id).join(db_model.TechniqueBase, db_model.TechniqueBase.id == db_model.DeviceScenarioBase.technique_id)
+        db_object = session.execute(statement)
         return db_object
 
 
