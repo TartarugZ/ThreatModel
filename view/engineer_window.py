@@ -156,7 +156,7 @@ class EngineerWindow(QtWidgets.QMainWindow, Ui_EngineerWindow):
             self.threat_list.addItems(self.ubi)
 
             self.negative_parsed.clear()
-            self.impact = get_negative_by_dev_id(self.engine, self.dev_selected.id)
+            self.negative = get_negative_by_dev_id(self.engine, self.dev_selected.id)
             negative = []
             for i in self.negative:
                 negative.append(f'{i[1]}')

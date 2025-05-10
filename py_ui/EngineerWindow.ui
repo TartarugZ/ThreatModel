@@ -131,7 +131,7 @@ QLineEdit::placeholder {
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>60</y>
+      <y>70</y>
       <width>801</width>
       <height>601</height>
      </rect>
@@ -564,8 +564,8 @@ QLineEdit::placeholder {
      <widget class="QLineEdit" name="first_le">
       <property name="geometry">
        <rect>
-        <x>190</x>
-        <y>10</y>
+        <x>20</x>
+        <y>70</y>
         <width>71</width>
         <height>20</height>
        </rect>
@@ -577,8 +577,8 @@ QLineEdit::placeholder {
      <widget class="QLineEdit" name="second_le">
       <property name="geometry">
        <rect>
-        <x>420</x>
-        <y>10</y>
+        <x>20</x>
+        <y>120</y>
         <width>71</width>
         <height>20</height>
        </rect>
@@ -587,8 +587,8 @@ QLineEdit::placeholder {
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>10</y>
+        <x>20</x>
+        <y>50</y>
         <width>141</width>
         <height>16</height>
        </rect>
@@ -600,8 +600,8 @@ QLineEdit::placeholder {
      <widget class="QLabel" name="label_9">
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>10</y>
+        <x>20</x>
+        <y>100</y>
         <width>131</width>
         <height>16</height>
        </rect>
@@ -613,21 +613,35 @@ QLineEdit::placeholder {
      <widget class="QPlainTextEdit" name="plainTextEdit">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>460</y>
-        <width>721</width>
-        <height>121</height>
+        <x>10</x>
+        <y>420</y>
+        <width>781</width>
+        <height>161</height>
        </rect>
       </property>
       <property name="readOnly">
        <bool>true</bool>
       </property>
+      <property name="plainText">
+       <string>2. Информационная безопасность ПК
+4. Сервер для внутренних сервисов
+Способ реализации: Внедрение вредоносного программного обеспечения
+Т2.7 Резервное копирование вредоносного кода в областях, редко подвергаемых проверке, в том числе заражение резервных копий данных, сохранение образов в неразмеченных областях жестких дисков и сменных носителей
+5. Системный администратор ПК
+Способ реализации: Использование уязвимостей (уязвимостей кода (программного обеспечения), уязвимостей архитектуры и конфигурации систем и сетей, а также организационных и многофакторных уязвимостей)
+Т2.10 Несанкционированный доступ путем подбора учетных данных сотрудника или легитимного пользователя (методами прямого перебора, словарных атак, паролей производителей по умолчанию, использования одинаковых паролей для разных учетных записей, применения «радужных» таблиц или другими)
+7. Сервер для обслуживания клиентов
+Способ реализации: Установка программных и(или) программно - аппаратных закладок  в программное обеспечение и(или) программно - аппаратные средства
+Т3.2 Активация и выполнение вредоносного кода, внедренного в виде закладок в легитимное программное и программное-аппаратное обеспечение систем и сетей
+УБИ.143. Угроза программного выведения из строя средств хранения, обработки и (или) ввода/вывода/передачи информации
+Негативное последствие: Ущерб юридичекому лицу. Финансовые и репутационные потери</string>
+      </property>
      </widget>
      <widget class="QPushButton" name="scenario_get_btn">
       <property name="geometry">
        <rect>
-        <x>510</x>
-        <y>10</y>
+        <x>40</x>
+        <y>150</y>
         <width>75</width>
         <height>23</height>
        </rect>
@@ -639,9 +653,9 @@ QLineEdit::placeholder {
      <widget class="QLabel" name="picture">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>40</y>
-        <width>561</width>
+        <x>200</x>
+        <y>10</y>
+        <width>551</width>
         <height>401</height>
        </rect>
       </property>
@@ -672,8 +686,8 @@ QLineEdit::placeholder {
      <widget class="QPushButton" name="pushButton">
       <property name="geometry">
        <rect>
-        <x>330</x>
-        <y>400</y>
+        <x>250</x>
+        <y>390</y>
         <width>91</width>
         <height>23</height>
        </rect>
@@ -716,6 +730,19 @@ QLineEdit::placeholder {
       </property>
       <property name="text">
        <string>Создать</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>390</y>
+        <width>91</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Применить</string>
       </property>
      </widget>
     </widget>

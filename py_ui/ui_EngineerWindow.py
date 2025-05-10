@@ -69,7 +69,7 @@ class Ui_EngineerWindow(object):
         self.guidebook_btn.setGeometry(QtCore.QRect(630, 10, 141, 41))
         self.guidebook_btn.setObjectName("guidebook_btn")
         self.stackedWidget = QtWidgets.QStackedWidget(self.centralwidget)
-        self.stackedWidget.setGeometry(QtCore.QRect(0, 60, 801, 601))
+        self.stackedWidget.setGeometry(QtCore.QRect(0, 70, 801, 601))
         self.stackedWidget.setObjectName("stackedWidget")
         self.modeling_page = QtWidgets.QWidget()
         self.modeling_page.setObjectName("modeling_page")
@@ -184,27 +184,27 @@ class Ui_EngineerWindow(object):
         self.scenario_page = QtWidgets.QWidget()
         self.scenario_page.setObjectName("scenario_page")
         self.first_le = QtWidgets.QLineEdit(self.scenario_page)
-        self.first_le.setGeometry(QtCore.QRect(190, 10, 71, 20))
+        self.first_le.setGeometry(QtCore.QRect(20, 70, 71, 20))
         self.first_le.setText("")
         self.first_le.setObjectName("first_le")
         self.second_le = QtWidgets.QLineEdit(self.scenario_page)
-        self.second_le.setGeometry(QtCore.QRect(420, 10, 71, 20))
+        self.second_le.setGeometry(QtCore.QRect(20, 120, 71, 20))
         self.second_le.setObjectName("second_le")
         self.label = QtWidgets.QLabel(self.scenario_page)
-        self.label.setGeometry(QtCore.QRect(50, 10, 141, 16))
+        self.label.setGeometry(QtCore.QRect(20, 50, 141, 16))
         self.label.setObjectName("label")
         self.label_9 = QtWidgets.QLabel(self.scenario_page)
-        self.label_9.setGeometry(QtCore.QRect(290, 10, 131, 16))
+        self.label_9.setGeometry(QtCore.QRect(20, 100, 131, 16))
         self.label_9.setObjectName("label_9")
         self.plainTextEdit = QtWidgets.QPlainTextEdit(self.scenario_page)
-        self.plainTextEdit.setGeometry(QtCore.QRect(40, 460, 721, 121))
+        self.plainTextEdit.setGeometry(QtCore.QRect(10, 420, 781, 161))
         self.plainTextEdit.setReadOnly(True)
         self.plainTextEdit.setObjectName("plainTextEdit")
         self.scenario_get_btn = QtWidgets.QPushButton(self.scenario_page)
-        self.scenario_get_btn.setGeometry(QtCore.QRect(510, 10, 75, 23))
+        self.scenario_get_btn.setGeometry(QtCore.QRect(40, 150, 75, 23))
         self.scenario_get_btn.setObjectName("scenario_get_btn")
         self.picture = QtWidgets.QLabel(self.scenario_page)
-        self.picture.setGeometry(QtCore.QRect(110, 40, 561, 401))
+        self.picture.setGeometry(QtCore.QRect(200, 10, 551, 401))
         self.picture.setText("")
         self.picture.setObjectName("picture")
         self.stackedWidget.addWidget(self.scenario_page)
@@ -217,7 +217,7 @@ class Ui_EngineerWindow(object):
         item = QtWidgets.QListWidgetItem()
         self.device_connected_list.addItem(item)
         self.pushButton = QtWidgets.QPushButton(self.template_page)
-        self.pushButton.setGeometry(QtCore.QRect(330, 400, 91, 23))
+        self.pushButton.setGeometry(QtCore.QRect(250, 390, 91, 23))
         self.pushButton.setObjectName("pushButton")
         self.lineEdit = QtWidgets.QLineEdit(self.template_page)
         self.lineEdit.setGeometry(QtCore.QRect(20, 40, 161, 20))
@@ -228,6 +228,9 @@ class Ui_EngineerWindow(object):
         self.pushButton_2 = QtWidgets.QPushButton(self.template_page)
         self.pushButton_2.setGeometry(QtCore.QRect(190, 40, 75, 23))
         self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_3 = QtWidgets.QPushButton(self.template_page)
+        self.pushButton_3.setGeometry(QtCore.QRect(410, 390, 91, 23))
+        self.pushButton_3.setObjectName("pushButton_3")
         self.stackedWidget.addWidget(self.template_page)
         EngineerWindow.setCentralWidget(self.centralwidget)
 
@@ -267,6 +270,18 @@ class Ui_EngineerWindow(object):
         self.label_8.setText(_translate("EngineerWindow", "Уязвимости"))
         self.label.setText(_translate("EngineerWindow", "Id начального оустройсва"))
         self.label_9.setText(_translate("EngineerWindow", "Id конечного оустройсва"))
+        self.plainTextEdit.setPlainText(_translate("EngineerWindow", "2. Информационная безопасность ПК\n"
+"4. Сервер для внутренних сервисов\n"
+"Способ реализации: Внедрение вредоносного программного обеспечения\n"
+"Т2.7 Резервное копирование вредоносного кода в областях, редко подвергаемых проверке, в том числе заражение резервных копий данных, сохранение образов в неразмеченных областях жестких дисков и сменных носителей\n"
+"5. Системный администратор ПК\n"
+"Способ реализации: Использование уязвимостей (уязвимостей кода (программного обеспечения), уязвимостей архитектуры и конфигурации систем и сетей, а также организационных и многофакторных уязвимостей)\n"
+"Т2.10 Несанкционированный доступ путем подбора учетных данных сотрудника или легитимного пользователя (методами прямого перебора, словарных атак, паролей производителей по умолчанию, использования одинаковых паролей для разных учетных записей, применения «радужных» таблиц или другими)\n"
+"7. Сервер для обслуживания клиентов\n"
+"Способ реализации: Установка программных и(или) программно - аппаратных закладок  в программное обеспечение и(или) программно - аппаратные средства\n"
+"Т3.2 Активация и выполнение вредоносного кода, внедренного в виде закладок в легитимное программное и программное-аппаратное обеспечение систем и сетей\n"
+"УБИ.143. Угроза программного выведения из строя средств хранения, обработки и (или) ввода/вывода/передачи информации\n"
+"Негативное последствие: Ущерб юридичекому лицу. Финансовые и репутационные потери"))
         self.scenario_get_btn.setText(_translate("EngineerWindow", "Сценарии"))
         __sortingEnabled = self.device_connected_list.isSortingEnabled()
         self.device_connected_list.setSortingEnabled(False)
@@ -276,3 +291,4 @@ class Ui_EngineerWindow(object):
         self.pushButton.setText(_translate("EngineerWindow", "Удалить"))
         self.label_10.setText(_translate("EngineerWindow", "Имя шаблона"))
         self.pushButton_2.setText(_translate("EngineerWindow", "Создать"))
+        self.pushButton_3.setText(_translate("EngineerWindow", "Применить"))

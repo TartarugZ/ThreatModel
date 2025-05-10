@@ -223,7 +223,7 @@ def get_ubi_by_dev_id(engine, device_id):
 
 def get_negative_by_dev_id(engine, device_id):
     with Session(engine) as session:
-        statement = select(db_model.NegativeResultBase.id, db_model.NegativeResultBase.damage_type,
+        statement = select(db_model.NegativeResultBase.id, db_model.NegativeResultBase.name, db_model.NegativeResultBase.damage_type,
                            db_model.NegativeResultBase.description).select_from(
             db_model.DeviceBase).where(
             db_model.DeviceBase.id == device_id).join(db_model.DeviceNegativeResultBase,

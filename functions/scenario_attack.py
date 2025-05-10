@@ -33,17 +33,17 @@ def find_all_paths(edges, start, end):
     return all_paths
 
 
-def save_paths_to_file(paths, start, end, filename="functions/scenario_attack_output/paths.txt"):
-    with open(filename, 'w') as f:
-        if not paths:
-            f.write(f"No paths found from {start} to {end}.\n")
-        else:
-            f.write(f"All paths from {start} to {end}:\n")
-            for i, path in enumerate(paths, 1):
-                f.write(f"Path {i}: {' -> '.join(map(str, path))}\n")
+# def save_paths_to_file(paths, start, end, filename="functions/scenario_attack_output/paths.txt"):
+#     with open(filename, 'w') as f:
+#         if not paths:
+#             f.write(f"No paths found from {start} to {end}.\n")
+#         else:
+#             f.write(f"All paths from {start} to {end}:\n")
+#             for i, path in enumerate(paths, 1):
+#                 f.write(f"Path {i}: {' -> '.join(map(str, path))}\n")
 
 
-def visualize_graph(edges, start, end, output_file, highlight_path=None):
+def visualize_graph(edges, start, end, output_file, node_labels, highlight_path=None):
     # Создаем граф с помощью networkx
     G = nx.Graph()
     G.add_edges_from(edges)
@@ -66,7 +66,8 @@ def visualize_graph(edges, start, end, output_file, highlight_path=None):
     nx.draw_networkx_nodes(G, pos, node_color='lightblue', node_size=500)
 
     # Рисуем метки вершин
-    nx.draw_networkx_labels(G, pos, font_size=12, font_weight='bold')
+    labels = node_labels if node_labels else {node: node for node in G.nodes()}
+    nx.draw_networkx_labels(G, pos, labels=labels, font_size=8)
 
     # Подписи для начальной и конечной вершин
     nx.draw_networkx_nodes(G, pos, nodelist=[start, end], node_color=['green', 'orange'], node_size=500)
@@ -84,12 +85,18 @@ def do_scenario(connected_devices, first, second):
     edges = connected_devices
     start = first
     end = second
+    node_labels = {
+        1: "Информационная\nбезопасность\nПК",
+        4: "Сервер\nдля\nвнутренних\nсервисов",
+        5: "Системный\nадминистратор\nПК",
+        7: "Сервер\nдля\nобслуживания\nклиентов"
+    }
 
     # Находим все маршруты
     paths = find_all_paths(edges, start, end)
 
     # Сохраняем маршруты в файл
-    save_paths_to_file(paths, start, end)
+    # save_paths_to_file(paths, start, end)
 
     # Выводим маршруты в консоль
     if paths:
@@ -102,4 +109,4 @@ def do_scenario(connected_devices, first, second):
     # Визуализируем граф (если он есть)
     if paths:
         for i in paths:
-            visualize_graph(edges, start, end, highlight_path=i, output_file=f"functions/scenario_attack_output/graph{i}.png")
+            visualize_graph(edges, start, end, highlight_path=i, node_labels=node_labels, output_file=f"functions/scenario_attack_output/graph{i}.png")
