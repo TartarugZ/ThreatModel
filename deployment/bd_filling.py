@@ -1,6 +1,5 @@
 import argparse
 from sqlalchemy import create_engine
-from data_base.db_model import create_db
 import test_filling
 from functions import ubi_parsing, vul_parsing
 

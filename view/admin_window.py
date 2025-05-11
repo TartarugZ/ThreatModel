@@ -218,6 +218,7 @@ class AdminWindow(QtWidgets.QMainWindow, Ui_AdminWindow):
         for i in self.threat_get_ubi:
             ubi_list.append(f'УБИ.{beautify_ubi(int(i.id))}')
             self.threat_get_ubi_parsed[f'УБИ.{beautify_ubi(int(i.id))}'] = i
+        ubi_list.sort()
         self.threat_ubi_list.addItems(ubi_list)
         self.enable_all_buttons()
         self.stackedWidget.setCurrentWidget(self.threat_page)

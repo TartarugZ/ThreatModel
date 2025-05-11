@@ -1,10 +1,9 @@
 import sys
-
 import PyQt5.QtWidgets as QtWidgets
 from view.auth_window import AuthWindow
-
 from data_base.db_model import create_db
 from sqlalchemy import create_engine
+
 # SQLALCHEMY_DATABASE_URL = "postgresql://kali:kali@192.168.226.152:5432/postgres"
 # engine = create_engine(SQLALCHEMY_DATABASE_URL, echo=True)
 # create_db(engine)

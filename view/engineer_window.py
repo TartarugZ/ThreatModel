@@ -1,3 +1,4 @@
+import os
 from data_base import db_model
 from data_base.db_controller import get_all_some, get_impact_types_by_dev_id, get_ubi_by_dev_id, get_negative_by_dev_id, \
     get_realization_by_dev_id, get_vul_by_dev_id, get_scenario_by_dev_id_threat_id, get_ip
@@ -69,6 +70,9 @@ class EngineerWindow(QtWidgets.QMainWindow, Ui_EngineerWindow):
             self.modeling_page_show()
 
             self.threat_list.itemSelectionChanged.connect(self.threat_list_selected)
+
+            self.picture_count = 0
+            self.picture_parsed = {}
         except Exception as e:
             print(e)
 
@@ -87,19 +91,28 @@ class EngineerWindow(QtWidgets.QMainWindow, Ui_EngineerWindow):
 
     def scenario_get_btn_pressed(self):
         try:
+            d = os.path.join("functions", "scenario_attack_output")
+            filesToRemove = [os.path.join(d, f) for f in os.listdir(d)]
+            for f in filesToRemove:
+                os.remove(f)
             all_connections = get_all_some(self.engine, db_model.DeviceConnectionBase)
             con_array = []
             for i in all_connections:
                 con_array.append((i.first_device_id, i.second_device_id))
-            scenario_attack.do_scenario(con_array, int(self.first_le.text()), int(self.second_le.text()))
+            self.picture_count = scenario_attack.do_scenario(con_array, int(self.first_le.text()), int(self.second_le.text()))
             # scene = QtWidgets.QGraphicsScene(self)
             # pixmap = QPixmap('functions/scenario_attack_output/graph[1, 4, 5].png')
             # item = QtWidgets.QGraphicsPixmapItem(pixmap)
             # scene.addItem(item)
             # self.graphicsView.setScene(scene)
-            pixmap = QPixmap("functions/scenario_attack_output/graph[1, 4, 5, 7].png")  # Путь к вашему изображению
+            pixmap = QPixmap("functions/scenario_attack_output/graph[2, 4, 5, 7].png")  # Путь к вашему изображению
             self.picture.setPixmap(pixmap)
-
+            self.label_11.setText(f'1/{self.picture_count}')
+            print(self.picture_count)
+            temp = 0
+            for filename in os.listdir(d):
+                self.picture_parsed[temp] = os.path.join(d, filename)
+                temp += 1
             # Включение масштабирования изображения
             self.picture.setScaledContents(True)
         except Exception as e:

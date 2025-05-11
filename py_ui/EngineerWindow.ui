@@ -131,9 +131,9 @@ QLineEdit::placeholder {
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>70</y>
+      <y>60</y>
       <width>801</width>
-      <height>601</height>
+      <height>611</height>
      </rect>
     </property>
     <widget class="QWidget" name="modeling_page">
@@ -152,7 +152,7 @@ QLineEdit::placeholder {
       <widget class="QLabel" name="label_6">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>250</x>
          <y>350</y>
          <width>201</width>
          <height>16</height>
@@ -165,7 +165,7 @@ QLineEdit::placeholder {
       <widget class="QPushButton" name="realization_change_btn">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>250</x>
          <y>560</y>
          <width>75</width>
          <height>23</height>
@@ -179,7 +179,7 @@ QLineEdit::placeholder {
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>300</y>
+         <y>270</y>
          <width>201</width>
          <height>16</height>
         </rect>
@@ -197,18 +197,8 @@ QLineEdit::placeholder {
          <height>231</height>
         </rect>
        </property>
-      </widget>
-      <widget class="QPushButton" name="vulnerability_change_btn">
-       <property name="geometry">
-        <rect>
-         <x>260</x>
-         <y>560</y>
-         <width>75</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Изменить</string>
+       <property name="wordWrap">
+        <bool>true</bool>
        </property>
       </widget>
       <widget class="QPushButton" name="threat_delete_btn">
@@ -227,24 +217,11 @@ QLineEdit::placeholder {
         <string>Удалить</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="vulnerability_search_btn">
-       <property name="geometry">
-        <rect>
-         <x>440</x>
-         <y>320</y>
-         <width>51</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Поиск</string>
-       </property>
-      </widget>
       <widget class="QPushButton" name="impact_change_btn">
        <property name="geometry">
         <rect>
          <x>260</x>
-         <y>270</y>
+         <y>230</y>
          <width>75</width>
          <height>23</height>
         </rect>
@@ -259,7 +236,7 @@ QLineEdit::placeholder {
        </property>
        <property name="geometry">
         <rect>
-         <x>170</x>
+         <x>410</x>
          <y>560</y>
          <width>81</width>
          <height>23</height>
@@ -288,14 +265,14 @@ QLineEdit::placeholder {
        </property>
        <property name="geometry">
         <rect>
-         <x>90</x>
+         <x>330</x>
          <y>560</y>
          <width>75</width>
          <height>23</height>
         </rect>
        </property>
        <property name="text">
-        <string>Применить</string>
+        <string>Добавить</string>
        </property>
       </widget>
       <widget class="QPushButton" name="threat_change_btn">
@@ -356,40 +333,17 @@ QLineEdit::placeholder {
         <string>Добавить</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="vulnerability_delete_btn">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="geometry">
-        <rect>
-         <x>420</x>
-         <y>560</y>
-         <width>75</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Удалить</string>
-       </property>
-      </widget>
-      <widget class="QListWidget" name="vulnerability_list">
-       <property name="geometry">
-        <rect>
-         <x>260</x>
-         <y>350</y>
-         <width>231</width>
-         <height>201</height>
-        </rect>
-       </property>
-      </widget>
       <widget class="QListWidget" name="realization_way_list">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>250</x>
          <y>370</y>
          <width>241</width>
          <height>181</height>
         </rect>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
        </property>
       </widget>
       <widget class="QLabel" name="label_2">
@@ -403,22 +357,6 @@ QLineEdit::placeholder {
        </property>
        <property name="text">
         <string>Список устройств</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="vulnerability_add_btn">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="geometry">
-        <rect>
-         <x>340</x>
-         <y>560</y>
-         <width>75</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Добавить</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_3">
@@ -459,6 +397,9 @@ QLineEdit::placeholder {
          <height>221</height>
         </rect>
        </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
       </widget>
       <widget class="QListWidget" name="device_list">
        <property name="geometry">
@@ -466,7 +407,7 @@ QLineEdit::placeholder {
          <x>10</x>
          <y>20</y>
          <width>241</width>
-         <height>271</height>
+         <height>241</height>
         </rect>
        </property>
       </widget>
@@ -487,8 +428,8 @@ QLineEdit::placeholder {
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>320</y>
-         <width>241</width>
+         <y>290</y>
+         <width>481</width>
          <height>22</height>
         </rect>
        </property>
@@ -500,7 +441,7 @@ QLineEdit::placeholder {
        <property name="geometry">
         <rect>
          <x>420</x>
-         <y>270</y>
+         <y>230</y>
          <width>75</width>
          <height>23</height>
         </rect>
@@ -515,8 +456,11 @@ QLineEdit::placeholder {
          <x>260</x>
          <y>40</y>
          <width>231</width>
-         <height>221</height>
+         <height>181</height>
         </rect>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
        </property>
       </widget>
       <widget class="QPushButton" name="impact_add_btn">
@@ -526,7 +470,7 @@ QLineEdit::placeholder {
        <property name="geometry">
         <rect>
          <x>340</x>
-         <y>270</y>
+         <y>230</y>
          <width>75</width>
          <height>23</height>
         </rect>
@@ -535,11 +479,76 @@ QLineEdit::placeholder {
         <string>Добавить</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="geometry">
+        <rect>
+         <x>410</x>
+         <y>320</y>
+         <width>81</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Изменить</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="vulnerability_search_btn">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>340</y>
+         <width>51</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Поиск</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="vulnerability_search_le">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>340</y>
+         <width>171</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="vulnerability_change_btn">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>560</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Изменить</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="vulnerability_delete_btn">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>560</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Удалить</string>
+       </property>
+      </widget>
       <widget class="QLabel" name="label_8">
        <property name="geometry">
         <rect>
-         <x>260</x>
-         <y>300</y>
+         <x>10</x>
+         <y>320</y>
          <width>201</width>
          <height>16</height>
         </rect>
@@ -548,14 +557,33 @@ QLineEdit::placeholder {
         <string>Уязвимости</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="vulnerability_search_le">
+      <widget class="QListWidget" name="vulnerability_list">
        <property name="geometry">
         <rect>
-         <x>260</x>
-         <y>320</y>
-         <width>171</width>
-         <height>20</height>
+         <x>10</x>
+         <y>370</y>
+         <width>231</width>
+         <height>181</height>
         </rect>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="vulnerability_add_btn">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>560</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Добавить</string>
        </property>
       </widget>
      </widget>
@@ -564,7 +592,7 @@ QLineEdit::placeholder {
      <widget class="QLineEdit" name="first_le">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>50</x>
         <y>70</y>
         <width>71</width>
         <height>20</height>
@@ -577,7 +605,7 @@ QLineEdit::placeholder {
      <widget class="QLineEdit" name="second_le">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>50</x>
         <y>120</y>
         <width>71</width>
         <height>20</height>
@@ -594,7 +622,7 @@ QLineEdit::placeholder {
        </rect>
       </property>
       <property name="text">
-       <string>Id начального оустройсва</string>
+       <string>Id начального устройства</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_9">
@@ -640,7 +668,7 @@ QLineEdit::placeholder {
      <widget class="QPushButton" name="scenario_get_btn">
       <property name="geometry">
        <rect>
-        <x>40</x>
+        <x>50</x>
         <y>150</y>
         <width>75</width>
         <height>23</height>
@@ -661,6 +689,35 @@ QLineEdit::placeholder {
       </property>
       <property name="text">
        <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_5">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>300</y>
+        <width>81</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Следующий</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>280</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0/0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>

@@ -1,4 +1,3 @@
-import psycopg2
 import argparse
 from sqlalchemy import create_engine
 from data_base.db_model import create_db

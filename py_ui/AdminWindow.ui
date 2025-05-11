@@ -89,7 +89,7 @@ border-radius: 25px;
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>9</number>
+     <number>10</number>
     </property>
     <widget class="QWidget" name="default_page">
      <widget class="QLabel" name="label_7">
@@ -318,6 +318,19 @@ border-radius: 25px;
       </property>
       <property name="text">
        <string>Удалить</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="threat_download_btn">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>490</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Обновить</string>
       </property>
      </widget>
     </widget>
@@ -2246,6 +2259,19 @@ border-radius: 25px;
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="vulnerability_download_btn">
+      <property name="geometry">
+       <rect>
+        <x>680</x>
+        <y>10</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Обновить</string>
       </property>
      </widget>
     </widget>

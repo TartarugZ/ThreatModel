@@ -1,3 +1,0 @@
-All paths from 1 to 5:
-Path 1: 1 -> 4 -> 5
-Path 2: 1 -> 4 -> 6 -> 5

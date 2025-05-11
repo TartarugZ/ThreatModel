@@ -3,9 +3,6 @@ import matplotlib.pyplot as plt
 import matplotlib
 from collections import defaultdict
 
-from data_base import db_model
-from data_base.db_controller import get_all_some
-
 
 def find_all_paths(edges, start, end):
     # Создаем словарь смежности для представления графа
@@ -86,7 +83,7 @@ def do_scenario(connected_devices, first, second):
     start = first
     end = second
     node_labels = {
-        1: "Информационная\nбезопасность\nПК",
+        2: "Информационная\nбезопасность\nПК",
         4: "Сервер\nдля\nвнутренних\nсервисов",
         5: "Системный\nадминистратор\nПК",
         7: "Сервер\nдля\nобслуживания\nклиентов"
@@ -110,3 +107,4 @@ def do_scenario(connected_devices, first, second):
     if paths:
         for i in paths:
             visualize_graph(edges, start, end, highlight_path=i, node_labels=node_labels, output_file=f"functions/scenario_attack_output/graph{i}.png")
+        return len(paths)
